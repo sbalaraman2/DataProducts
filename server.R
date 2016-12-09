@@ -53,7 +53,7 @@ shinyServer(function(input, output) {
     title <- paste("Number of Tornadoes in the month of", input$s_month, "per state")
     p <- ggplot(pdata, aes(map_id = region))
     
-    p <- p + geom_map(aes(fill = cnt), map = state_map, colour='black') + expand_limits(x = states_map$long, y = states_map$lat)
+    p <- p + geom_map(aes(fill = cnt), map = state_map, colour='black') + expand_limits(x = state_map$long, y = state_map$lat)
     
     p <- p + scale_fill_continuous(low = "thistle2", high = "darkred", guide="colorbar")
     
@@ -76,7 +76,7 @@ shinyServer(function(input, output) {
     title <- paste("Number of Fatalities in the month of", input$s_month, "per state")
     p <- ggplot(pdata, aes(map_id = region))
     
-    p <- p + geom_map(aes(fill = fat), map = state_map, colour='black') + expand_limits(x = states_map$long, y = states_map$lat)
+    p <- p + geom_map(aes(fill = fat), map = state_map, colour='black') + expand_limits(x = state_map$long, y = state_map$lat)
     
     p <- p + scale_fill_continuous(low = "thistle2", high = "darkred", guide="colorbar")
     
